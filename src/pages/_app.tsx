@@ -10,8 +10,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <ChakraProvider>
         <Nav />
         <Component {...pageProps} />
+        <Footer />
       </ChakraProvider>
-      <Footer />
     </>
   );
 }
