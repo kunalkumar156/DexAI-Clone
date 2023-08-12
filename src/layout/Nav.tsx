@@ -7,7 +7,7 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
-import { BsArrowUpRight } from "react-icons/bs";
+import { FiArrowUpRight } from "react-icons/fi";
 import React from "react";
 
 function Nav() {
@@ -51,16 +51,31 @@ function Nav() {
               <Text>Contacts</Text>
             </Link>
           </Flex>
-          <Flex justifyContent="center">
+          <Flex justify="center" align="center" gap={10}>
             {/* language */}
-            <Link>
+            <Link href="#">
               <Text>English</Text>
             </Link>
 
             {/* Sign Up Button */}
-            <Button className="button" borderRadius={30} color="#fff">
+            <Button
+              className="button"
+              borderRadius={30}
+              color="#fff"
+              padding="24px 26px "
+              textAlign="center"
+              backgroundColor="transparent"
+              _hover={{ backgroundColor: "transparent" }}
+            >
               Sign Up
-              <BsArrowUpRight />
+              <FiArrowUpRight
+                className="arrow"
+                style={{
+                  background: "transparent",
+                  fontSize: "20px",
+                  transition: "transform 0.5s ease",
+                }}
+              />
             </Button>
           </Flex>
         </Flex>
