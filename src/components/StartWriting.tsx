@@ -2,7 +2,6 @@ import {
   Box,
   Container,
   Heading,
-  Icon,
   Link,
   Text,
   ChakraProvider,
@@ -16,23 +15,44 @@ import { FiSettings } from "react-icons/fi";
 import React from "react";
 
 function StartWriting({
-  icon: IconComponent, // Rename to IconComponent
+  IconComponent, // Rename to IconComponentComponent
   heading,
   content,
   link,
   text,
 }: {
-  icon: React.ComponentType; // Change to React.ComponentType
+  IconComponent: React.ComponentType; // Change to React.ComponentType
   heading: string;
   content: string;
   link: string;
   text: string;
 }) {
   return (
-    <Box>
-      <IconComponent boxSize="10px" color="blue.500" />{" "}
-      {/* Use IconComponent */}
-      <Heading fontSize="20px" marginBottom="10px">
+    <Box
+      bg="rgba(255, 255, 255, 0.2)" // Set the background color with opacity
+      borderRadius="10px"
+      p="20px"
+      position="relative"
+      display="flex"
+      alignItems="center" // Vertically center the content
+      justifyContent="center" // Horizontally center the content
+      textAlign="left" // Align the content to the left side from the center
+      flexDirection="column"
+    >
+      <Box
+        boxSize={16}
+        borderRadius="100px"
+        position="absolute" // Add absolute positioning to the IconComponent wrapper
+        top="0px" // Adjust the vertical position as needed
+        left="0px" // Adjust the horizontal position as needed
+        fontSize="40px"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <IconComponent />
+      </Box>
+      <Heading fontSize="20px" marginBottom="10px" background="transparent">
         {heading}
       </Heading>
       <Text
@@ -41,6 +61,8 @@ function StartWriting({
         color="#C8B8E8"
         lineHeight="1.75"
         fontWeight="400"
+        background="transparent"
+        width="70%"
       >
         {content}
       </Text>
@@ -55,14 +77,20 @@ function App() {
   return (
     <ChakraProvider>
       <Container maxW={1300} mb="4rem">
-        <Heading>
+        <Heading
+          fontWeight="700"
+          fontSize="60px"
+          letterSpacing="-0.01em"
+          textAlign="center"
+          mb="5rem"
+        >
           Start writing <span>10x faster</span> with AI
         </Heading>
 
         <Box display="flex" justifyContent="center" gap="30px" mb="2rem">
           <StartWriting
             key="brain"
-            icon={BiBrain}
+            IconComponent={BiBrain}
             heading="
             The GPT-3.5 language"
             content="Unlike anything you've experienced - unique and unimaginable capabilities."
@@ -71,7 +99,7 @@ function App() {
           />
           <StartWriting
             key="chart"
-            icon={FaChartLine}
+            IconComponent={FaChartLine}
             heading="
             Grow with the use of AI"
             content="Unlike anything you've experienced - unique and unimaginable capabilities."
@@ -80,7 +108,7 @@ function App() {
           />
           <StartWriting
             key="lightbulb"
-            icon={HiOutlineLightBulb}
+            IconComponent={HiOutlineLightBulb}
             heading="Optimized for conversions"
             content="Unlike anything you've experienced - unique and unimaginable capabilities."
             link="#"
@@ -91,7 +119,7 @@ function App() {
         <Box display="flex" justifyContent="center" gap="30px">
           <StartWriting
             key="globe"
-            icon={FaGlobe}
+            IconComponent={FaGlobe}
             heading="Supports 26 languages"
             content="Unlike anything you've experienced - unique and unimaginable capabilities."
             link="#"
@@ -99,7 +127,7 @@ function App() {
           />
           <StartWriting
             key="user"
-            icon={FaUserFriends}
+            IconComponent={FaUserFriends}
             heading="
             Streamline collaboration"
             content="Unlike anything you've experienced - unique and unimaginable capabilities."
@@ -108,7 +136,7 @@ function App() {
           />
           <StartWriting
             key="settings"
-            icon={FiSettings}
+            IconComponent={FiSettings}
             heading="Powerful settings"
             content="Unlike anything you've experienced - unique and unimaginable capabilities."
             link="#"
