@@ -75,32 +75,35 @@
 /* Second Button */
 
 /* Define the gradient-button class */
+
 .gradient-button {
-  border-radius: 30px;
+  display: flex;
+  gap: 20px;
   font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  margin: 10px;
   padding: 19px 30px;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 150% auto;
+  color: white;
+  border-radius: 30px;
+  z-index: 1;
+}
 
-  background: linear-gradient(
+.gradient-button:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.btn-1 {
+  background-image: linear-gradient(
     89.78deg,
     #c8bdff -31.69%,
     #baa6ff -22.78%,
     #6721ff 27.93%,
     #00cbff 99.79%
   );
-}
-
-/* Define the hover effect */
-.gradient-button:hover {
-  background: linear-gradient(89.78deg, #6721ff, #00cbff);
-  background-position: 100% 0;
-
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
 }
 
 /* Define the arrow transformation */

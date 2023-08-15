@@ -5,19 +5,30 @@ import React from "react";
 function Hero() {
   return (
     <>
-      <Container maxW={1300}>
+      <Container maxW={1300} mb="5rem">
         <Box>
           <Flex
             justifyContent="center"
             flexDirection="column"
             alignItems="center"
           >
-            <Text>Whatever You Want to ask - DEX.AI </Text>
-            <Text>
-              has the <span></span>
-              Solutions
+            <Text
+              pt="4rem"
+              fontSize="65px"
+              width="90%"
+              margin="0 auto 30px"
+              textAlign="center"
+              fontWeight="600"
+            >
+              Whatever You Want to ask - DEX.AI has the <span>Solutions</span>
             </Text>
-            <Text>
+            <Text
+              width="63%"
+              margin="0 auto 30px"
+              fontSize="18px"
+              color="#C8B8E8"
+              textAlign="center"
+            >
               Artificial intelligence makes it fast easy to create content for
               your blog, social media, website, and more! Rated 5/5 stars in
               3,000+ reviews.
@@ -25,8 +36,8 @@ function Hero() {
           </Flex>
         </Box>
 
-        <Flex justifyContent="center" gap={20}>
-          <button className="gradient-button">
+        <Flex justifyContent="center" gap={10}>
+          <button className="gradient-button btn-1">
             start a free trial
             <FiArrowUpRight
               className="arrow"
@@ -38,15 +49,7 @@ function Hero() {
             />
           </button>
 
-          <Button
-            className="button"
-            borderRadius={30}
-            color="#fff"
-            padding="24px 26px "
-            textAlign="center"
-            backgroundColor="transparent"
-            _hover={{ backgroundColor: "transparent" }}
-          >
+          <button className="gradient-button btn-1">
             how dex.ai work
             <FiArrowUpRight
               className="arrow"
@@ -56,7 +59,7 @@ function Hero() {
                 transition: "transform 0.5s ease",
               }}
             />
-          </Button>
+          </button>
         </Flex>
       </Container>
     </>
