@@ -110,3 +110,54 @@
 .gradient-button:hover .arrow {
   transform: rotate(45deg);
 }
+
+/* cards */
+
+.writing-card {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  height: 33vh;
+  border-radius: 30px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.writing-card-svg {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* background: */
+.writing-card-svg::after {
+  border-radius: 50%;
+  content: " ";
+  position: absolute;
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    87.22deg,
+    #c8bdff -1.82%,
+    #baa6ff 5.99%,
+    #6721ff 50.47%,
+    #00cbff 113.5%
+  );
+  z-index: -1;
+}

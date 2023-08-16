@@ -28,28 +28,8 @@ function StartWriting({
   text: string;
 }) {
   return (
-    <Box
-      bg="rgba(255, 255, 255, 0.2)" // Set the background color with opacity
-      borderRadius="10px"
-      p="20px"
-      position="relative"
-      display="flex"
-      alignItems="center" // Vertically center the content
-      justifyContent="center" // Horizontally center the content
-      textAlign="left" // Align the content to the left side from the center
-      flexDirection="column"
-    >
-      <Box
-        boxSize={16}
-        borderRadius="100px"
-        position="absolute" // Add absolute positioning to the IconComponent wrapper
-        top="0px" // Adjust the vertical position as needed
-        left="0px" // Adjust the horizontal position as needed
-        fontSize="40px"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-      >
+    <Box className="writing-card">
+      <Box className="writing-card-svg">
         <IconComponent />
       </Box>
       <Heading fontSize="20px" marginBottom="10px" background="transparent">
@@ -67,7 +47,12 @@ function StartWriting({
         {content}
       </Text>
       <Link href={link} isExternal fontSize="16px">
-        <Text>{text}</Text>
+        <Text
+          background="transparent"
+          _hover={{ color: "#0d6efd", textDecoration: "none" }}
+        >
+          {text}
+        </Text>
       </Link>
     </Box>
   );
