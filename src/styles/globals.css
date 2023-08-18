@@ -161,3 +161,8 @@
   );
   z-index: -1;
 }
+
+/* Button with no style but Blue on hover */
+
+.simple-button {
+}
