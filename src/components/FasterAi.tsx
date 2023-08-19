@@ -22,6 +22,7 @@ function FasterAi() {
     <>
       <Container maxW={1300}>
         <Flex gap={24}>
+          {/* Left section */}
           <Box width="35%">
             <Heading
               fontWeight="700"
@@ -43,6 +44,8 @@ function FasterAi() {
               your next content for you.
             </Text>
           </Box>
+
+          {/*Right side - Nav section */}
 
           <Box width="60%">
             <Flex alignItems="center">
@@ -120,6 +123,8 @@ function FasterAi() {
               </Box>
             </Flex>
 
+            {/* Right side - box section */}
+
             <Box
               background="linear-gradient(89.78deg, rgba(200 189 255 / 20%) -31.69%, rgba(186 166 255 / 20%) -22.78%, rgba(103 33 255 / 20%) 27.93%, rgba(0 203 255 / 20%) 99.79%)"
               borderRadius="30px"
@@ -127,7 +132,6 @@ function FasterAi() {
               padding="30px 40px"
               width="60%"
             >
-              {/* First Section */}
               <Box mb="4" background="transparent">
                 <Text
                   bg="transparent"
@@ -173,7 +177,6 @@ function FasterAi() {
                 </Slider>
               </Box>
 
-              {/* Second Section */}
               <Flex alignItems="center" background="transparent" gap={7}>
                 <Box width="25%" bg="transparent">
                   <Text
@@ -232,6 +235,8 @@ function FasterAi() {
                 />
               </button>
             </Box>
+
+            {/* Right side - Relative Box */}
           </Box>
         </Flex>
       </Container>
