@@ -14,7 +14,13 @@ import {
   SliderThumb,
 } from "@chakra-ui/react";
 import { RiArrowRightSLine } from "react-icons/ri";
+import { FaCopy } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
+import { FaPaste } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
+import { FaPlusCircle } from "react-icons/fa";
+
 import React from "react";
 import { useState } from "react";
 
@@ -28,6 +34,11 @@ function StyledIcon({ IconComponent }: { IconComponent: React.ComponentType }) {
 
   return (
     <Box
+      style={{
+        transition: "color 0.3s, background 0.3s",
+        color: hovered ? "#6721FF" : "white",
+        background: hovered ? "#6721FF" : "#0D0126",
+      }}
       width="40px"
       height="40px"
       display="flex"
@@ -37,23 +48,35 @@ function StyledIcon({ IconComponent }: { IconComponent: React.ComponentType }) {
       justifyContent="center"
       textAlign="center"
       marginRight="5px"
-      color={hovered ? "#6721FF" : "white"}
-      background={hovered ? "#6721FF" : "#0D0126"}
-      transition="transform 0.5s ease"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div style={iconStyles}>
-        <IconComponent style={iconStyles} />
-      </div>
+      <IconComponent style={iconStyles} />
     </Box>
+  );
+}
+
+function Btn({ button }: { button: string }) {
+  return (
+    <Button
+      className="simple-button"
+      bg="transparent"
+      color="white"
+      borderRadius="10px"
+      fontWeight="600"
+      fontSize="15px"
+      padding="6px 15px"
+      _hover={{ background: "#6721FF" }}
+    >
+      {button}
+    </Button>
   );
 }
 
 function FasterAi() {
   return (
     <>
-      <Container maxW={1300}>
+      <Container maxW={1300} pt="5rem">
         <Flex gap={24}>
           {/* Left section */}
           <Box width="35%">
@@ -68,7 +91,7 @@ function FasterAi() {
             <Text
               width="100%"
               margin="0 auto 30px"
-              fontSize="18px"
+              fontSize="16px"
               color="#C8B8E8"
               textAlign="left"
             >
@@ -89,70 +112,11 @@ function FasterAi() {
                 padding="10px 30px"
                 marginBottom="60px"
               >
-                <Button
-                  className="simple-button"
-                  bg="transparent"
-                  color="white"
-                  borderRadius="10px"
-                  fontWeight="600"
-                  fontSize="15px"
-                  padding="6px 15px"
-                  _hover={{ background: "#6721FF" }}
-                >
-                  Website
-                </Button>
-
-                <Button
-                  className="simple-button"
-                  bg="transparent"
-                  color="white"
-                  borderRadius="10px"
-                  fontWeight="600"
-                  fontSize="15px"
-                  padding="6px 15px"
-                  _hover={{ background: "#6721FF" }}
-                >
-                  Social Media
-                </Button>
-
-                <Button
-                  className="simple-button"
-                  bg="transparent"
-                  color="white"
-                  borderRadius="10px"
-                  fontWeight="600"
-                  fontSize="15px"
-                  padding="6px 15px"
-                  _hover={{ background: "#6721FF" }}
-                >
-                  Emails
-                </Button>
-
-                <Button
-                  className="simple-button"
-                  bg="transparent"
-                  color="white"
-                  borderRadius="10px"
-                  fontWeight="600"
-                  fontSize="15px"
-                  padding="6px 15px"
-                  _hover={{ background: "#6721FF" }}
-                >
-                  Code
-                </Button>
-
-                <Button
-                  className="simple-button"
-                  bg="transparent"
-                  color="white"
-                  borderRadius="10px"
-                  fontWeight="600"
-                  fontSize="15px"
-                  padding="6px 15px"
-                  _hover={{ background: "#6721FF" }}
-                >
-                  Art
-                </Button>
+                <Btn button="Website" />
+                <Btn button="Social Media" />
+                <Btn button="Emails" />
+                <Btn button="Code" />
+                <Btn button="Art" />
               </Box>
             </Flex>
 
@@ -168,12 +132,15 @@ function FasterAi() {
             >
               {/* Absolute box */}
               <Box
+                width="100%"
                 position="absolute"
                 background="#270A5F"
                 borderRadius="30px"
                 border="1px solid rgba(255 255 255 / 20%)"
-                padding="30px 40px"
+                padding="50px 50px 40px"
                 zIndex="10"
+                right="-65%"
+                bottom="-7%"
               >
                 <div
                   style={{
@@ -197,20 +164,24 @@ function FasterAi() {
                     }}
                   />
                 </div>
-                <Text background="transparent">
+                <Text
+                  background="transparent"
+                  marginBottom="35px"
+                  lineHeight="8"
+                >
                   Meta description: Unlock the power of AI to automate your
                   business with Since AI. Our suite of AI-powered solutions can
                   help streamline your operations and increase efficiency.
                 </Text>
                 <Box display="flex" background={"transparent"}>
-                  <StyledIcon IconComponent={FaHome} />
-                  <StyledIcon IconComponent={FaHome} />
-                  <StyledIcon IconComponent={FaHome} />
-                  <StyledIcon IconComponent={FaHome} />
-                  <StyledIcon IconComponent={FaHome} />
+                  <StyledIcon IconComponent={FaCopy} />
+                  <StyledIcon IconComponent={FaDownload} />
+                  <StyledIcon IconComponent={FaPaste} />
+                  <StyledIcon IconComponent={FaTrashAlt} />
+                  <StyledIcon IconComponent={FaPlusCircle} />
                 </Box>
               </Box>
-
+              {/* Relative box */}
               <Box mb="4" background="transparent">
                 <Text
                   bg="transparent"
@@ -218,6 +189,7 @@ function FasterAi() {
                   fontSize="16px"
                   mb="0.5rem"
                   marginTop="1.5rem"
+                  outline="none"
                 >
                   Keywords
                 </Text>
@@ -267,7 +239,7 @@ function FasterAi() {
                     Language
                   </Text>
                   <Input
-                    bg="rgba(255, 255,   <Box> 255, 0.12)"
+                    bg="rgba(255, 255, 255, 0.12)"
                     fontSize="14px"
                     border="1px solid rgba(255, 255, 255, 0.12)"
                     placeholder="Swedish"
