@@ -12,10 +12,43 @@ import {
   SliderTrack,
   SliderFilledTrack,
   SliderThumb,
-  SliderMark,
 } from "@chakra-ui/react";
 import { RiArrowRightSLine } from "react-icons/ri";
+import { FaHome } from "react-icons/fa";
 import React from "react";
+import { useState } from "react";
+
+function StyledIcon({ IconComponent }: { IconComponent: React.ComponentType }) {
+  const [hovered, setHovered] = useState(false);
+
+  const iconStyles = {
+    display: "inline-flex",
+    background: "transparent",
+  };
+
+  return (
+    <Box
+      width="40px"
+      height="40px"
+      display="flex"
+      alignItems="center"
+      borderRadius="50%"
+      fontSize="14px"
+      justifyContent="center"
+      textAlign="center"
+      marginRight="5px"
+      color={hovered ? "#6721FF" : "white"}
+      background={hovered ? "#6721FF" : "#0D0126"}
+      transition="transform 0.5s ease"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div style={iconStyles}>
+        <IconComponent style={iconStyles} />
+      </div>
+    </Box>
+  );
+}
 
 function FasterAi() {
   return (
@@ -131,7 +164,53 @@ function FasterAi() {
               border="1px solid rgba(255 255 255 / 20%)"
               padding="30px 40px"
               width="60%"
+              position="relative"
             >
+              {/* Absolute box */}
+              <Box
+                position="absolute"
+                background="#270A5F"
+                borderRadius="30px"
+                border="1px solid rgba(255 255 255 / 20%)"
+                padding="30px 40px"
+                zIndex="10"
+              >
+                <div
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#6721FF",
+                    color: "white",
+                    borderRadius: "5px",
+                    fontSize: "18px",
+                    marginBottom: "20px",
+                    fontWeight: 900,
+                  }}
+                >
+                  <FaHome
+                    style={{
+                      background: "transparent",
+                      fontSize: "20px",
+                    }}
+                  />
+                </div>
+                <Text background="transparent">
+                  Meta description: Unlock the power of AI to automate your
+                  business with Since AI. Our suite of AI-powered solutions can
+                  help streamline your operations and increase efficiency.
+                </Text>
+                <Box display="flex" background={"transparent"}>
+                  <StyledIcon IconComponent={FaHome} />
+                  <StyledIcon IconComponent={FaHome} />
+                  <StyledIcon IconComponent={FaHome} />
+                  <StyledIcon IconComponent={FaHome} />
+                  <StyledIcon IconComponent={FaHome} />
+                </Box>
+              </Box>
+
               <Box mb="4" background="transparent">
                 <Text
                   bg="transparent"
@@ -188,7 +267,7 @@ function FasterAi() {
                     Language
                   </Text>
                   <Input
-                    bg="rgba(255, 255, 255, 0.12)"
+                    bg="rgba(255, 255,   <Box> 255, 0.12)"
                     fontSize="14px"
                     border="1px solid rgba(255, 255, 255, 0.12)"
                     placeholder="Swedish"
@@ -235,8 +314,6 @@ function FasterAi() {
                 />
               </button>
             </Box>
-
-            {/* Right side - Relative Box */}
           </Box>
         </Flex>
       </Container>
