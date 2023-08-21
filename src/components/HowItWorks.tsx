@@ -1,7 +1,12 @@
+import { Container, Box, Heading } from "@chakra-ui/react";
 import React from "react";
 
 function HowItWorks() {
-  return <div>HowItWorks</div>;
+  return (
+    <>
+      
+    </>
+  );
 }
 
 export default HowItWorks;
