@@ -12,7 +12,7 @@ function HowItWorks() {
           textAlign="center"
           mb="5rem"
         >
-          How it <span>works</span>
+          How it works
         </Heading>
       </Container>
     </>
