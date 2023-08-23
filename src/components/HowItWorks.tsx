@@ -10,7 +10,6 @@ function HowItWorks() {
           fontSize="60px"
           letterSpacing="-0.01em"
           textAlign="center"
-          mb="5rem"
         >
           How it works
         </Heading>
