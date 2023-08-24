@@ -4,16 +4,7 @@ import React from "react";
 function HowItWorks() {
   return (
     <>
-      <Container maxW={1300} pt="10rem">
-        <Heading
-          fontWeight="700"
-          fontSize="60px"
-          letterSpacing="-0.01em"
-          textAlign="center"
-        >
-          How it works
-        </Heading>
-      </Container>
+      <Container maxW={1300} pt="10rem"></Container>
     </>
   );
 }
