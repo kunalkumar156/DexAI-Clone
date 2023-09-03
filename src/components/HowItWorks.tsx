@@ -1,7 +1,7 @@
 // components/CardContainer.js
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
 
-const Card = ({ title, options }) => (
+const Card = ({ title, options }: { title: "srting"; options: "string" }) => (
   <Box
     border="1px solid white"
     p={4}
@@ -16,7 +16,13 @@ const Card = ({ title, options }) => (
     </Heading>
     <Box>
       {options.map((option, index) => (
-        <Text key={index} mb={1} overflow="hidden" whiteSpace="nowrap" textOverflow="ellipsis">
+        <Text
+          key={index}
+          mb={1}
+          overflow="hidden"
+          whiteSpace="nowrap"
+          textOverflow="ellipsis"
+        >
           {option}
         </Text>
       ))}
