@@ -11,9 +11,6 @@ const Card = ({ title, options }: { title: "srting"; options: "string" }) => (
     maxW="300px"
     m={4}
   >
-    <Heading as="h2" size="md" mb={2}>
-      {title}
-    </Heading>
     <Box>
       {options.map((option, index) => (
         <Text
