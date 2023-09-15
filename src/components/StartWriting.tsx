@@ -15,13 +15,13 @@ import { FiSettings } from "react-icons/fi";
 import React from "react";
 
 function StartWriting({
-  IconComponent, // Rename to IconComponentComponent
+  IconComponent,
   heading,
   content,
   link,
   text,
 }: {
-  IconComponent: React.ComponentType; // Change to React.ComponentType
+  IconComponent: React.ComponentType;
   heading: string;
   content: string;
   link: string;
